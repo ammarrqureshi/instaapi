@@ -3,7 +3,7 @@ import FacebookLogin from "@greatsumini/react-facebook-login";
 import axios from "axios";
 
 const Login = () => {
-  console.log("COMMIT 14");
+  console.log("COMMIT 15");
   const app_creds = {
     app_id: "177944255262951",
     app_secret: "b081432a152f58b87e7c5643ef8efddf",
@@ -22,15 +22,15 @@ const Login = () => {
           redirect_uri: app_creds.redirect_uri,
           grant_type: 'authorization_code',
           code: auth_code
-        },
+        }},{
           headers:{
             "Access-Control-Allow-Origin":"*",
             "Access-Control-Allow-Methods":"GET,HEAD,OPTIONS,POST,PUT",
             "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization"
 
-          }
+          }}
         
-      })
+     )
       .then((response) => {
         console.log(response);
       })
