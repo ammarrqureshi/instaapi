@@ -16,7 +16,7 @@ const Login = () => {
 
   const queryParameters = new URLSearchParams(window.location.search)
   const auth_code = queryParameters.get("code")
-  if(auth_code.length > 0){
+  if(auth_code){
     axios.post('https://api.instagram.com/oauth/access_token?client_id='+app_creds.app_id+'&client_secret='+app_creds.app_secret+'&redirect_uri='+app_creds.redirect_uri+'&grant_type=authorization_code&code='+auth_code).then((response)=>{
     console.log(response)
   })
