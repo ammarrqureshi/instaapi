@@ -11,17 +11,20 @@ const Login = () => {
     'redirect_uri':'https://instaapi-sigma.vercel.app/',
     'scope': 'user_profile,user_media',
   }
-
+  axios.post('https://api.instagram.com/oauth/access_token?client_id='+app_creds.app_id+'&client_secret='+app_creds.app_secret+'&redirect_uri='+app_creds.redirect_uri+'&grant_type=authorization_code&code='+auth_code).then((response)=>{
+    console.log(response)
+  })
+  
   const queryParameters = new URLSearchParams(window.location.search)
   const auth_code = queryParameters.get("code")
-  useEffect(() => {
-    axios.post('https://api.instagram.com/oauth/access_token?client_id='+app_creds.app_id+'&client_secret='+app_creds.app_secret+'&redirect_uri='+app_creds.redirect_uri+'&grant_type=authorization_code&code='+auth_code).then((response)=>{
-      console.log(response)
-    })
-    return () => { console.log(auth_code)
+  // useEffect(() => {
+  //   axios.post('https://api.instagram.com/oauth/access_token?client_id='+app_creds.app_id+'&client_secret='+app_creds.app_secret+'&redirect_uri='+app_creds.redirect_uri+'&grant_type=authorization_code&code='+auth_code).then((response)=>{
+  //     console.log(response)
+  //   })
+  //   return () => { console.log(auth_code)
     
-    };
-  }, [auth_code]);
+  //   };
+  // }, [auth_code]);
   const [name, setName] = useState('');
   const [accessToken, setAccessToken] = useState('');
   const responseFacebook = (response) => {
