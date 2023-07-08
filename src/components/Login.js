@@ -20,7 +20,7 @@ const Login = () => {
           client_id: app_creds.app_id,
           client_secret: app_creds.app_secret,
           redirect_uri: app_creds.redirect_uri,
-          grant_type: authorization_code,
+          grant_type: 'authorization_code',
           code: auth_code,
         },
       })
