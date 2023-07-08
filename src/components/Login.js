@@ -67,7 +67,7 @@ const Login = () => {
       Name: {name};
       accessToken: {accessToken}
 
-     <a href={'https://api.instagram.com/oauth/authorize?client_id='+app_creds['app-id']+'&redirect_uri='+app_creds.redirect_uri+'&scope='+app_creds.scope+'&response_type=code'}><button >Get Instagram Data</button></a>
+     <a href={'https://api.instagram.com/oauth/authorize?client_id='+app_creds['app_id']+'&redirect_uri='+app_creds.redirect_uri+'&scope='+app_creds.scope+'&response_type=code'}><button >Get Instagram Data</button></a>
          <br></br> Instagram Auth Code : {auth_code}
     </div>
   );
