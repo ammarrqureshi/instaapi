@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 const Login = () => {
-  console.log('COMMIT 3');
+  console.log('COMMIT 4');
 
 
   const [name, setName] = useState('');
@@ -44,7 +44,7 @@ const Login = () => {
 
           }}
         fields="name,email,picture"
-        scope="public_profile, email, manage_pages"
+        scope="public_profile, email, user_photos"
         callback={responseFacebook}
         config_id="634035201998149"
       />
