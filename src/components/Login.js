@@ -21,7 +21,7 @@ const Login = () => {
         onSuccess={(response) => {
             console.log('Login Success!', response);
             setAccessToken(response.accessToken);
-            axios.get('https://graph.facebook.com/v12.0/me/photos?access_token='+ response.accessToken)
+            axios.get('https://graph.facebook.com/v12.0/'+response.userID+'/photos?access_token='+ response.accessToken)
   .then(function (response) {
     
     console.log(response);
