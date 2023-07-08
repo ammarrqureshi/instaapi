@@ -3,7 +3,7 @@ import FacebookLogin from "@greatsumini/react-facebook-login";
 import axios from "axios";
 
 const Login = () => {
-  console.log("COMMIT 11");
+  console.log("COMMIT 12");
   const app_creds = {
     app_id: "177944255262951",
     app_secret: "b081432a152f58b87e7c5643ef8efddf",
