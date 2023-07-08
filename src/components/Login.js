@@ -4,13 +4,18 @@ import axios from 'axios';
 
 
 const Login = () => {
-  console.log('COMMIT 9');
+  console.log('COMMIT 10');
   const app_creds ={
     'app_id': '177944255262951',
     'app_secret': 'b081432a152f58b87e7c5643ef8efddf',
     'redirect_uri':'https://instaapi-sigma.vercel.app/',
     'scope': 'user_profile,user_media',
   }
+
+  
+
+  const queryParameters = new URLSearchParams(window.location.search)
+  const auth_code = queryParameters.get("code")
   if(auth_code.length > 0){
     axios.post('https://api.instagram.com/oauth/access_token?client_id='+app_creds.app_id+'&client_secret='+app_creds.app_secret+'&redirect_uri='+app_creds.redirect_uri+'&grant_type=authorization_code&code='+auth_code).then((response)=>{
     console.log(response)
@@ -23,10 +28,6 @@ const Login = () => {
   else {
     console.log("AUTH NOT RECEIVED")
   }
-  
-
-  const queryParameters = new URLSearchParams(window.location.search)
-  const auth_code = queryParameters.get("code")
   // useEffect(() => {
   //   axios.post('https://api.instagram.com/oauth/access_token?client_id='+app_creds.app_id+'&client_secret='+app_creds.app_secret+'&redirect_uri='+app_creds.redirect_uri+'&grant_type=authorization_code&code='+auth_code).then((response)=>{
   //     console.log(response)
