@@ -5,7 +5,23 @@ import axios from 'axios';
 
 const Login = () => {
   console.log('COMMIT 4');
+  const app_creds ={
+    'app-id': '177944255262951',
+    'redirect_uri':'https://instaapi-sigma.vercel.app/',
+    'scope': 'user_profile,user_media',
+  }
 
+  const authroize = () => {
+    axios.get('https://api.instagram.com/oauth/authorize?client_id='+app_creds['app-id']+'&redirect_uri='+app_creds.redirect_uri+'&scope='+app_creds.scope+'&response_type=code')
+    .then(function (response) {
+      
+      console.log(response);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+  }
 
   const [name, setName] = useState('');
   const [accessToken, setAccessToken] = useState('');
@@ -51,6 +67,9 @@ const Login = () => {
   {/* <img src={imgurl} alt="" /> */}
       Name: {name};
       accessToken: {accessToken}
+
+     <a href={'https://api.instagram.com/oauth/authorize?client_id='+app_creds['app-id']+'&redirect_uri='+app_creds.redirect_uri+'&scope='+app_creds.scope+'&response_type=code'}><button >Get Instagram Data</button></a>
+    
     </div>
   );
 };
